@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.fengyu.modelservice.dao.DemoDao" >
+
+
+    <select id="getAll" resultType="com.fengyu.modelservice.vo.UserVO">
+        SELECT phone, username, `sex`, account_status as accountStatus, task_status as taskStatus, lock_status as lockStatus, remark
+        from phone_info where username is not null and task_status = 1 limit 20
+    </select>
+
+
+
+
+
+    <!--resultMap 示例-->
+    <!--<resultMap id="BaseResultMap" type="com.fengyu.modelservice.vo.TbItemCat" >-->
+        <!--<id column="id" property="id" jdbcType="BIGINT" />-->
+        <!--<result column="parent_id" property="parentId" jdbcType="BIGINT" />-->
+        <!--<result column="name" property="name" jdbcType="VARCHAR" />-->
+    <!--</resultMap>-->
+
+
+    <!-- for 循环 示例-->
+    <!--<foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >-->
+        <!--#{listItem}-->
+    <!--</foreach>-->
+
+
+    <!-- choose when 示例 -->
+    <!--<choose >-->
+        <!--<when test="criterion.noValue" >-->
+            <!--and ${criterion.condition}-->
+        <!--</when>-->
+        <!--<when test="criterion.singleValue" >-->
+            <!--and ${criterion.condition} #{criterion.value}-->
+        <!--</when>-->
+        <!--<when test="criterion.betweenValue" >-->
+            <!--and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}-->
+        <!--</when>-->
+        <!--<when test="criterion.listValue" >-->
+            <!--and ${criterion.condition}-->
+        <!--</when>-->
+    <!--</choose>-->
+
+    <!-- if  示例 -->
+    <!--<if test="_parameter != null and _parameter != '' " >-->
+
+    <!--</if>-->
+
+</mapper>

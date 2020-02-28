@@ -1,0 +1,18 @@
+server:
+  port: 8180
+spring:
+  application:
+    name: bootmodelservice
+  datasource:
+    url: jdbc:mysql://47.114.140.200/alipay?useUnicode=true&characterEncoding=Utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true
+    username: alipay
+    password: sH64fSYk52SSde4W
+  aop:
+    auto: true
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.fengyu.modelservice.model
+logging:
+  level:
+    com.fengyu.modelservice.dao: debug
+
